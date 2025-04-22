@@ -21,16 +21,21 @@ export default function Squad(){
 
     
     return(
-        <div>
+      <>
+      <h1 className="font-bold p-10 mt-10 text-2xl">Added Characters:</h1>
+        <div className="flex gap-10 flex-wrap justify-center">
             {characters.map((char)=>{
                 return(
                 <CharacterCard 
                 key={char.id}
+                id={char.id}
                 name={char.name}
                 characterType={char.character_type}
+                
                 />
                 )
             })}
         </div>
+      </>
     )
 }

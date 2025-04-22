@@ -7,6 +7,7 @@ export default function Form() {
    const [characterType, setCharacterType] = useState('')
    const [characters, setCharacters] = useState([])
 
+   
 
 
    const handleSubmit = async (e) => {
@@ -28,10 +29,10 @@ export default function Form() {
 
   return (
       <form id="mario-squad-form" onSubmit={handleSubmit}>
-        <h2>Create Your Mario Crewmate</h2>
+        <h2 className='font-bold text-2xl text-red-600 p-5'>Create Your Mario Crewmate</h2>
   
         {/* Name Input */}
-        <label htmlFor="crewmateName">Name your crewmate:</label><br />
+        <label htmlFor="crewmateName" className='pb-2'>Name your crewmate:</label><br />
         <input
           type="text"
           id="crewmateName"
@@ -39,13 +40,14 @@ export default function Form() {
           onChange = {(e)=>setName(e.target.value)}
           placeholder="e.g. Speedy Luigi"
           required
+          className='border-2 rounded p-2'
         />
   
         <br /><br />
   
         {/* Character Selector */}
         <p>Select a Mario character:</p>
-  <div className='flex flex-col gap-2'>
+  <div className='flex flex-col gap-2 text-left ml-35'>
         {['Mario', 'Luigi', 'Peach', 'Bowser', 'Yoshi', 'Toad'].map((char) => (
         <label key={char} >
           <input
@@ -56,6 +58,7 @@ export default function Form() {
             onChange={(e) => setCharacterType(e.target.value)}
             style={{ marginRight: '0.5rem' }}
             required
+            
      
           />
           {char}
@@ -66,7 +69,7 @@ export default function Form() {
   
         <br />
   
-        <button type="submit" >Add to Squad</button>
+        <button type="submit" className='bg-green-500 rounded p-2 text-white'>Add to Squad</button>
       </form>
     );
   }

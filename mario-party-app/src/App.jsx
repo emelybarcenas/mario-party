@@ -5,6 +5,7 @@ import Form from './components/Form'; // Ensure Form is imported
 import Squad from './components/Squad'; // Ensure Squad is imported
 import './App.css';
 import Navbar from './components/Navbar';
+import Updated from './components/Updated';
 
 function App() {
   return (
@@ -29,6 +30,12 @@ function App() {
             <Form />
             </>
           }/>
+          <Route path="/edit/:id" element={
+        <>
+        <Navbar />
+        <Updated />
+        </>  
+        } />
       </Routes>
     </BrowserRouter>
   );
