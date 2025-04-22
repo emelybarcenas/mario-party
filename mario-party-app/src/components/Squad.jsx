@@ -7,7 +7,7 @@ export default function Squad(){
     const [characters, setCharacters] = useState([])
 
     const fetchCharacters = async () => {
-      const { data, error } = await supabase.from('Characters').select('*')
+      const { data, error } = await supabase.from('Characters').select('*').order('created_at', {ascending:false})
       if (error) {
         console.error('Error fetching characters:', error.message)
       } else {

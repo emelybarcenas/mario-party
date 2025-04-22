@@ -6,6 +6,7 @@ import Squad from './components/Squad'; // Ensure Squad is imported
 import './App.css';
 import Navbar from './components/Navbar';
 import Updated from './components/Updated';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -36,6 +37,15 @@ function App() {
         <Updated />
         </>  
         } />
+        <Route 
+        path="/details/:id"
+        element={
+          <>
+          <Navbar />
+          <Details />
+          </>
+        }
+        />
       </Routes>
     </BrowserRouter>
   );

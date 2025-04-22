@@ -20,7 +20,11 @@ export default function CharacterCard({id, name, characterType}){
     return(
         <div className="w-[300px] h-[400px] border-2 border-gray-400 rounded-2xl flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
+           
+            <Link to={`/details/${id}`} className="flex justify-center items-center">
             <img src={imageSrc} alt={characterType} className="flex w-3/4 h-5/6 object-cover "/>
+            </Link>
+           
             <h1>Name: {name}</h1>
             <h1>Character Type: {characterType}</h1>
             <button className="m-5" >
